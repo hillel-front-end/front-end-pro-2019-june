@@ -3,7 +3,7 @@
 # Читаем информационные ресурсы:
  * https://learn.javascript.ru/array
  * https://learn.javascript.ru/array-methods //test
- * https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Arraye
+ * https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array
 
 # Практика
  1. Заполнить массив А случайными числами (диазпазон на ваше усмотрение). Заменить каждый элемент массива с нечетным индексом на ноль.
