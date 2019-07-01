@@ -113,3 +113,33 @@ printInLog = function () {
 
 // main();
 
+function getCenteElement() {
+  centerData = [];
+
+  for(i = 0; i < arguments.length; i++) {
+    count = arguments[i].length % 2 ? 1 : 2;
+    center = Math.ceil(arguments[i].length / 2) - 1;
+    centerData = centerData.concat(arguments[i].splice(center, count));
+
+    // centerData = [] + [3] = [3]
+    //centerData   =  [3] + [3,5] = [3,3,5]
+  }
+
+  return centerData;
+}
+
+foo = getCenteElement([1,2,3,4,5], [1,2,3,5,6, 7], [1,2,3,4,5,6]);
+
+console.log(foo, 'foo')
+
+
+function doFunction (mule, a, b) {
+  mule(a, b);
+}
+
+
+function mule(a, b) { 
+  console.log(a * b);
+}
+
+doFunction(mule, 2, 3);
