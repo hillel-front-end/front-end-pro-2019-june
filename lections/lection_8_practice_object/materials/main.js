@@ -1,86 +1,114 @@
-var a = 1, b = a;
+a = {name: 123}
 
-console.log(a, b, 'a, b');
-a = 2;
+b = a;
 
-console.log(a, b, 'a, b');
+console.log(a, 'a');
 
-
-var obj = {
-    name: 'valera'
-},
-obj2 = obj;
+console.log(b, 'b');
 
 
-console.log(obj, obj2);
-
-obj2.name = 'Vasy';
-
-
-console.log(obj, obj2);
-
-
-function abc(mass) {
-    mass.push('123123');
-    console.log(mass, 'mass');
-}
-
-abc.hello = true;
-
-var arr = [1,2,3];
-
-
-abc(arr);
-
-console.log(arr, 'arr');
-
-console.log(abc.hello, 'hello');
-
-var func = function () {
+b.name = 'Valera';
+b.toDo = function () {
 
 }
 
-func.a = '123123';
+console.log(a, 'a');
+console.log(b, 'b');
 
-function foo (callback) {
-    console.log(callback.a = 123, 'callback');
-};
-
-foo(func)
-
-console.log(func.a, 'func');
-
-var obj = { x: 10, y: 20, inner: { x: 20, z: 30 }, foo2: { k: 23, p: {foo: 20} } };
+console.log( a == b);
 
 
-function convert(obj) {
-    var objNew = {};
+function foo(mass) { // mass = arr
+  mass.pop();
+  console.log(mass, 'mass');
 
-    for (var key in obj) {
-        if (typeof obj[key] === 'object') {
-            var obj2 = convert(obj[key]); // inner
+  console.log(foo.a)
+}
 
-            for (var i in obj2) {
-                objNew[i] = obj2[i];
-            }
+foo.a = 123;
+
+arr = [1,2,3];
+
+foo(arr);
+
+console.log(arr, 'arrr');
+
+console.dir(foo, 'foo')
+console.log(foo.a)
+
+foo([1,2,3]);
+
+
+person = { name: 'Valera'}
+
+// obj.a // undefined 
+
+
+// person['name'] = 'Pety';
+
+arrray = new Array(new Array(5), new Array(5), new Array(new Array(5), new Array(5)));
+
+
+// function isArr (arr) {
+//     if(arr && arr.pop) {
+//         return true;
+//     }
+
+//     return false;
+// }
+
+// console.log(isArr({}));
+// console.log(isArr([]))
+
+// [
+//     [1,2,3],
+//     [
+//         [1,2,3],
+//         [1,2,3]
+//     ]
+    
+// ]
+
+
+function arrayFill (arr) { // [].len = 5
+    for(var i = 0; i < arr.length; i++) {
+        if (arr[i] && arr[i].pop) {
+            arrayFill(arr[i] );
         } else {
-            objNew[key] = obj[key];
-            
+            arr[i] = 0
+        }
+    }
+}
+
+arrayFill(arrray);
+
+console.log(arrray, 'arrray')
+
+
+obj = { x: 10, y: 20, inner: { x: 20, z: 30 }, foo2: { k: 23, p: 13 } };
+
+
+function convert (obj) {
+ var newObj = {x:10}; 
+
+    for (key in obj) {
+        // console.log(obj[key])
+
+        if(typeof obj[key] == 'object') {
+            var o = convert(obj[key]);
+
+            for(key2 in o) {
+                newObj[key2] = o[key2];
+            }
+
+        } else {
+            newObj[key] = obj[key];
         }
     }
 
-
-    return objNew;
+    return newObj;
 }
 
-var finish = convert(obj);
+foo = convert(obj)
 
-console.log(finish, 'finish');
-
-
-var g = {
-    lastName: 123
-}
-
-console.log(g['name']);
-console.log(g.name);
+console.log(foo, 'foo')

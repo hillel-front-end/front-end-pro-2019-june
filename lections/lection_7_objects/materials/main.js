@@ -83,6 +83,9 @@ human =  {
     skills: ['css', 'js', 'html'],
     sleep: function () {
         console.log("Zzzzzz....")
+    },
+    children: {
+        name:'asdsad'
     }
 
 }
