@@ -74,8 +74,21 @@ mass.myPush = function(value) {
     this[this.length] = value + "  !  ";
 }
 
-mass.myPush('123123');
+// mass.myPush('123123');
 
 console.log(mass, 'mass~!!')
 
-\
+mass.myJoin = function(separator) {
+    var str = '';
+    console.log(this)
+
+    for(var i = 0; i < this.length - 1; i++) {
+        str += this[i] + separator
+    }
+
+    str += this[this.length - 1];
+    
+    return str;
+}
+
+console.log(mass.myJoin('!'));

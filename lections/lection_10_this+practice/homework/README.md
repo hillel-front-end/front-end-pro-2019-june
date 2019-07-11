@@ -39,14 +39,6 @@
 возвращать true или false.<hr >
 ` inArray('foo', ['sjhfnaof', 'affooasf', 'dfhdfhdfh'])` должно вернуть `true`, т.к. в `affooasf` есть совпадение.
 
-
-
-
-
-
-
-
-  
 ## Лекция
 
 1)  Написать методы push, join, reverse самостоятельно.
