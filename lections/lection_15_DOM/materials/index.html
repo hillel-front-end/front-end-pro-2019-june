@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="main.js"></script>
+
+    <style>
+
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            margin-bottom: 10px;
+            position: fixed;
+            top: 0px;
+            transition: all 2s;
+        }
+
+        .box:nth-child(1) {
+            background: red;
+            left: 0px;
+        }
+
+        .box:nth-child(2) {
+            background: black;
+            left: 220px;
+        }
+
+        .box:nth-child(3) {
+            left: 440px;
+            background: blue;
+        }
+
+        .box:hover {
+            transform: rotate(320deg) scale(2);
+        }
+
+        .block {
+            /* opacity: 0; */
+            transition: all 1s;
+            color: black;
+        }
+
+        .disable {
+            opacity: 1;
+            color: blue;
+        }
+    </style>
+
+</head>
+<body >
+    <div class="block" id="foo">
+        block - 1
+    </div>
+</body>
+</html>
