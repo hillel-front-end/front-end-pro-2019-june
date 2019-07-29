@@ -94,11 +94,35 @@
 
 
 window.onload = function () {
-    var block = document.querySelector('.block');
-    console.dir(block, 'block');
+    var boxes = document.querySelectorAll('.box');
+    console.dir(boxes, 'boxes');
+
+    setInterval(function(){
+        for(var i = 0; i < boxes.length; i++) {;
+            var width = window.innerWidth - boxes[i].clientWidth;
+            var height = window.innerHeight - boxes[i].clientHeight;
+
+            console.dir(boxes[i], 'box');
+
+            boxes[i].style.left = getRandom(0, width) + 'px';
+            boxes[i].style.top = getRandom(0, height) + 'px';
+            boxes[i].style.backgroundColor = getRandomColor();
+
+            boxes[i].style.width = getRandom(100, 500) + 'px';
+            boxes[i].style.height = getRandom(100, 500) + 'px';
+        }
+    }, 1000);
+
+
+    function getRandom(min, max) {
+        return Math.floor(Math.random() * (max - min) + min);
+    }
+
+
+    function getRandomColor() {
+        return 'rgb(' +  getRandom(0, 256) + ',' + getRandom(0, 256) + ',' + getRandom(0, 256) + ')';
+    }
 }
-
-
 
 
 
