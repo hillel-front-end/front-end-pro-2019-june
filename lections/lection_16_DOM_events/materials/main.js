@@ -2,11 +2,11 @@ console.log('Lection_16');
 
 
 window.onload = function(){
-    var box = document.querySelector('.box');
+    // var box = document.querySelector('.box');
 
-    console.dir(box, 'box');
-    function onToDo(e) { //event = {}
-        console.log(' e', e);
+    // console.dir(box, 'box');
+    // function onToDo(e) { //event = {}
+    //     console.log(' e', e);
 
         // console.log(e.altKey, 'e.altKey');
         // console.log(e.type, 'type');
@@ -20,9 +20,9 @@ window.onload = function(){
     //    console.log(e.clientY, 'clientY');
     //    console.log(e.pageY, 'pageY');
     //    console.log(e.offsetY, 'offsetY');
-        console.log('onType');
+    //     console.log('onType');
 
-    }
+    // }
 
     // document.onclick = onToDo;
 
@@ -56,23 +56,33 @@ window.onload = function(){
 
     // addEventListener
 
-    box.addEventListener('click', function(event) {
-        console.log('event', 'foooooo');
-    }); 
+    // box.addEventListener('click', function(event) {
+    //     console.log('event', 'foooooo');
+    // }); 
 
-    box.addEventListener('click', onToDo); 
+    // box.addEventListener('click', onToDo); 
 
-    var boxes = document.querySelectorAll('.box');
+    // var boxes = document.querySelectorAll('.box');
 
-    for(var i = 0; i < boxes.length; i++) {
-        boxes[i].addEventListener('click', function(e) {
-            console.log('213213123');
+    // for(var i = 0; i < boxes.length; i++) {
+    //     boxes[i].addEventListener('click', function(e) {
+    //         console.log('213213123');
 
-            console.log(e.clientY, 'clientY');
-            console.log(e.pageY, 'clientY');
+    //         console.log(e.clientY, 'clientY');
+    //         console.log(e.pageY, 'clientY');
 
-        });
-    }
+    //     });
+    // }
+
+    var box = document.querySelector('.box');
+
+    console.log(box, 'box');
+
+    box.addEventListener('click', function() {
+        
+        this.classList.toggle('active');
+        //event.target.classList.toggle('active')
+    });
 }
 
 // console.log(222);
