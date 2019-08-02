@@ -1,6 +1,7 @@
 ﻿# Изучить материал
     + https://learn.javascript.ru/events-change
-
+    + https://learn.javascript.ru/mouse-events-basics
+    + https://learn.javascript.ru/mousemove-mouseover-mouseout-mouseenter-mouseleave
 # Лекция
 
 1) При клике на html элемент div.box(квадратик 200х200) изменить цвет бордера и фона блока (при помощи класса active).
