@@ -9,21 +9,43 @@
 # Лекция
 
 1) 
-	var	model = { 
+1) 
+		data = { 
 			name: 'menu', 
 			type: 'row|column', 
 			items: [
 				{
-					title: 'title 1'
+					title: 'title 1',
+					handler: 'ActionAdd'
 				},
 				{
 					title: 'title 2',
+					handler: 'ActionSaveAs'
+					items: [
+						{ title: 'inner 1' }, { title: 'inner 2' }
+					]
 				},
 				{
 					title: 'title 3',
+					handler: 'ActionExit'
 				}
 			]
 		}
 
+		actions = {
+			ActionAdd: function() {},
+			ActionSaveAs: function() {},
+			ActionExit: function() { console.log('ActionExit')}
+		}
+
+		actions['create']
+
+
 1)Создать вертикальное или горизонтальное (в зависимости от свойства type) меню, в котором будут элементы из свойства items.
+
+
+2) hander - хранит название функции, которая выполнится при нажатии на пункт меню.
+
+
+3) ** Inner items - выпадающее меню.
 
