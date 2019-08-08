@@ -19,6 +19,9 @@
             padding: 0px;
             margin: 0px;
             list-style: none;
+            width: 100px;
+            margin-top: 30px;
+            margin: 0 auto;
         }
 
         .box, .box-2 {
@@ -29,6 +32,14 @@
         }
 
 
+        li {
+            border: 1px solid red;
+            margin-top: 10px;
+            margin-left: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+
 
     </style>
     <script src="./main.js"></script>
@@ -37,8 +48,8 @@
     <!-- <input type="number"> -->
     <!-- <input type="text" id='firstName'> -->
 
-    <div class="box"></div>
-    <div class="box-2"></div>
+    <div class="box" data-action='save'></div>
+    <div class="box" data-action='edit'></div>
     
 </body>
 </html>
