@@ -47,6 +47,28 @@ window.onload = function() {
     console.log(foo, 'foo');
 
 
+    
+var counter = document.querySelector('.counter');
+var blocks = document.querySelectorAll('.block');
+
+counter.innerHTML = localStorage.getItem('counter') || 0;
+
+
+
+for(var i = 0; i < blocks.length; i++) {
+    blocks[i].dataset.id = i ;
+    blocks[i].querySelector('.counter').innerHTML  =  localStorage.getItem('counter' + blocks[i].dataset.id);
+
+    blocks[i].addEventListener('click', function(event) {
+        var counter = event.target.nextElementSibling;
+        localStorage.setItem('counter' +  this.dataset.id, ++counter.innerHTML)
+    });
+
+
+}
+
+
+
 
 }
 
