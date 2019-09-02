@@ -6,46 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style></style>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
 
-        <!-- интерполяции могут использоваться любые валидные выражения JavaScript. -->
+        <!-- интерполяции могут использоваться любые валидные выражения JavaScript.
     <div id="app">
-        <!-- При рендеринге выражения со скобками {{}} будут заменяться соответствующими значениями: -->
+        При рендеринге выражения со скобками {{}} будут заменяться соответствующими значениями:
 
-        {{ message }}
+        {{ message > 0 }}
 
-        <!-- {{isComplite ? 'Hello' : 'Loading ...'}} -->
+        {{list}}
+
+        {{ getLogin()}}
+        
+        <button>{{isComplite ? 'Hello' : 'Loading ...'}}</button>
         <hr />
-    </div> 
+    </div>  -->
 
-  <!-- <hr />
-    <div id="app-2">
+  <hr />
+    <!-- <div id="app-2">
         {{ className }}
         <span 
             v-bind:style="appearence">
             span inner text
         </span>
 
-        <div v-bind:class="{worn:}">
+        <div v-bind:class="className">
         </div>
+
+        <a v-bind:href="href"></a>
+        <button v-bind:disabled="success">click</button>
     </div>
 
-    <hr /> -->
+    <hr />
+ -->
 
 <!-- 
     <div id="app-3">
         <span v-if="seen">Сейчас меня видно</span>
 
-
+        <div v-if="currentPage == 'page1'">page1-Gallery</div>
+        <div  v-else="currentPage == 'page2'">page2-Contacts</div> 
+        <div  v-show="currentPage == 'page2'">page2-Contacts</div>
     </div> -->
 
     
  
-    <!-- <hr />
+    <hr />
 
-    <div id="app-4">
+    <!-- <div id="app-4">
         <ol>
             <li v-for="item in list"
                 v-if="item.text">
@@ -64,34 +75,39 @@
         <span>
             {{ calculate(8) }}
         </span>
-         <button v-on:click="Click">
+          <button v-on:click="Click">
             Click
-        </button>
+        </button> 
 
         <button 
             v-for="(value, index) in list"
-            @mousemove="mouseover"
-            @click="Click($event, value, index)">
-            Click {{ getValue() }}
+            @mouseover="mouseover"
+            @click="foo($event, value, index)">
+            Click {{ value.title }}
+            {{getValue()}}
         </button> 
     </div> -->
 
     <!-- <hr> -->
 
-     <!-- <div id="app-6">
+      <div id="app-6">
         <p>{{ message }}</p>
 
         <input v-model="message">
 
         <input type="checkbox" v-model="switcher">
+        {{switcher}}
 
+        <span  v-bind:class="{ active: isActive > 10, 'text-danger': !isActive, a:true }">JHELLO</span>
 
         <hr>
-    </div> -->
+    </div> 
 <!--
     <hr>
 
     <hr>
+    
+
 
     <hr>  -->
 

@@ -4,14 +4,23 @@
 // var app = new Vue({
 //   el: '#app',
 //   data: {
-//     isComplite: false
+//     isComplite: false,
+//     message: 'Hello world',
+//     list: [
+//       'asd',
+//       'asd'
+//     ],
+//     login: 'Valera',
+//     getLogin: function() {
+//       return this.login;
+//     }
 //   }
 // })
 
-// console.log(app);
+// // console.log(app);
 
 // setTimeout(() => {
-//   console.log(app.message);
+//   console.log(app.message = '123');
 // }, 3000)
 
 // ------------- 2. Работа атрибутами v-bind:, v-html: --------------------------
@@ -21,13 +30,16 @@
 //   el: '#app-2',
 //   data: {
 //     value: 0,
-//     className: 'foo',
+//     className: 'active',
 //     worn: true,
-//     success: false
+//     success: true,
+//     href:'http:/foo.com',
 //     appearence: 'transition: .5s; color: red;',
 //     message: 'Вы загрузили эту страницу в: ' + new Date().toLocaleString()
 //   }
-// })
+// });
+
+// app2.className = 'hidden';
 
 // setInterval(() => {
 //  app2.value = Math.floor(Math.random() * 60)
@@ -41,8 +53,8 @@
 // var app3 = new Vue({
 //   el: '#app-3',
 //   data: {
-//     seen: true
-//     currentPage: 'one' // видимость блоков
+//     seen: true,
+//     currentPage: 'page1' // видимость блоков
 //   }
 // })
 
@@ -92,15 +104,17 @@
 //   data: {
 //     message: 'Привет, Vue.js!',
 //     counter: 3,
-//     list: [6, 9, 12],
+//     list: [{title: 'save'}, {title: 'edit'}],
 //     calculate(value) {
 //       return value + 200;
 //     }
 //   },
 //   methods: {
-//     Click(event, value, pos){
-//       this.list.splice(pos, 1)
-//       console.log('clicked', arguments);
+//     foo(event, value, index){
+//       console.log('click',event, value, index);
+
+//       this.list.splice(index, 1);
+
 //     },
 //     mouseover(ev){
 //       this.counter = ev.offsetX;
@@ -113,13 +127,15 @@
 
 // // // ---------------------------------------
 
-// var app6 = new Vue({
-//   el: '#app-6',
-//   data: {
-//     message: 'Привет, Vue!',
-//     switcher: false,
-//   }
-// })
+var app6 = new Vue({
+  el: '#app-6',
+  data: {
+    message: 'Привет, Vue!',
+    switcher: false,
+    isActive: 5,
+    hasError: true
+  }
+})
 
 
 // -----------------------------

@@ -10,15 +10,18 @@ function sendAjax(method, url) {
 
 
         xhr.onreadystatechange = function() { // (3)
-            if(xhr.readyState != 4) return;
-            resolve(JSON.parse(xhr.responseText))
+            console.log(xhr.responseText, xhr.readyState,'xhr.responseText');
+            if(xhr.readyState == 4) {
+                let response = JSON.parse(xhr.responseText);
+                resolve(response);
+            }   
         }
 
     });
 }
 
 
-sendAjax('get', 'server/datasdsada.json')
+sendAjax('get', 'server/data.json')
     .then(data => data)
     .then(data => data.list.map( item => item + '213'))
     .then(res => console.log(res, 'res'));
