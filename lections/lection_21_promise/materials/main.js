@@ -121,7 +121,13 @@ function m3() {
 new Promise((res, rej) => {
     rej('123123123');
 })
-.then(m1, ()=> console.log(1))
-.then(m2)
+.then(m1)
+.then(function(value) {
+    
+    return value * 10;
+})
+.then(function(value) {
+    return value;
+})
 .then(m3)
-.catch(data => console.log(data, 'data'));
+.catch(value => console.log(data, 'data'));
