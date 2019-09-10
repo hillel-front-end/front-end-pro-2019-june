@@ -1,4 +1,4 @@
-# Изучить материал
+﻿# Изучить материал
     + https://cli.vuejs.org/ru/guide/installation.html
     + https://ru.vuejs.org/v2/guide/single-file-components.html
     + https://ru.vuejs.org/v2/guide/components-slots.html
@@ -9,8 +9,10 @@
     + https://ru.vuejs.org/v2/guide/components-custom-events.html
 # Практика
     
-1) Создать компоненту FormGenerator. Которая будет выдавать шаблон для ввода значений.
-Пример использования: <FormGenerator :form="['input[type=text]', 'input[type=email]', 'input[type=button]', 'input[type=text]']">
-
-2) Добавляем props с названием model <FormGenerator :model="inputData">. В model свойство будет сохранятся результат введенных значений во все поля, которые генерируются.
+* Реализовать приложение (аля мессенджер). 
+ 1) При вводе в поисковое поле которое находится в шапки приложения  ораганизовать фильтрп по контактам (используем все что учили computed,emit, props - обязательно)
+ Контакты храним в компоненте contacts, наприм.:
+ `[{name:'Sergey', messages:['hello', 'Goodbay']}]`
+ 2) `*` при клике на определенный контакт в блоке messages показать сообщения
+ 3) `**` реализовать добавление сообщений в контакт сообщения которого сейчас в блоке(компаненте) messages отображено.
 
