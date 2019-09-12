@@ -2,11 +2,15 @@
   <div id="app">
 
     <div> 
-        <input type="text" v-model="foo">
+        <input 
+        type="text" 
+        v-model="foo" />
         <br />
         Outer in parent component: {{foo}}
     </div>
-      <Menu :sometext="foo" @transfer="setValue"/>
+      <Menu 
+      :sometext="foo" 
+      @transfer="setValue"/>
   </div>
 </template>
 

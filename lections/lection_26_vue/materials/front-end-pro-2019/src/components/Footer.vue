@@ -1,29 +1,35 @@
 <template>
-    <div>
-        Footer: {{GET_FULL_NAME}}
-
-        {{getName}}
+    <div class='footer'>
+        Footer
     </div>
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters } from 'vuex';
 
 export default {
     name:'Footer',
     data() {
         return {
-            name: this.$store.state.name
+
         }
     },
     computed: {
-        ...mapGetters(['GET_FULL_NAME', 'getName'])
     },
     methods: {
-        ...mapActions(['asycnGetProducts'])
-    },
-    created() {
-        this.asycnGetProducts();
+
     }
 }
 </script>
+
+
+<style lang="scss">
+    .footer {
+        position: fixed;
+        bottom: 0px;
+        height: 50px;
+        background: black;
+        width: 100%;
+        color: white;
+    }
+</style>

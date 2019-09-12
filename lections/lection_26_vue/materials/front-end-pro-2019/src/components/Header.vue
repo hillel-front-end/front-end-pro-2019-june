@@ -1,7 +1,6 @@
 <template>
     <div class="header">
-        
-        Header:{{name}}
+        Header
     </div>
 </template>
 
@@ -11,12 +10,17 @@ export default {
     name: 'Header',
     data() {
         return {
-            name: this.$store.state.name
+
         }
-    },
-    created() {
-        
     }
 }
 </script>
-
+<style lang="scss">
+    .header {
+        position: fixed;
+        width: 100%;
+        top: 0px;
+        height: 50px;
+        background: red;
+    }
+</style>

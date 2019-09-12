@@ -1,29 +1,31 @@
 <template>
     <div>
         <Header />
-            <div 
-                v-for="(person, $index) in getPersonsList"
-                :key="$index">
-                {{person.name}}
-            </div>
-         <Footer />
+        <Content/>
+        <Footer />
     </div>
 </template>
 
 <script>
   import Footer from './Footer';
   import Header from './Header';
-  import { mapGetters } from 'vuex';
-
+  import Content from './Content';
+  import { mapGetters, mapMutations } from 'vuex';
 
 export default {
     name: 'Dashboard',
     components: {
+        Header,
         Footer,
-        Header
+        Content
     },
     computed: {
-        ...mapGetters(['getPersonsList'])
+    },
+    methods: {
+        ...mapMutations(['changeName']),
+        onInput(event) {
+            this.changeName(event.target.value);
+        }
     }
 }
 </script>

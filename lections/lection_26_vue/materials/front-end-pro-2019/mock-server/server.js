@@ -1,8 +1,10 @@
 var express = require('express');
 var app = express();
-var persons = require('./peoples/persons');
 const port = 3001;
-console.log(persons);
+
+let users = require('./user-data/user.json');
+
+console.log(users, 'users');
 
 
 app.use(function(req, res, next) {
@@ -11,6 +13,26 @@ app.use(function(req, res, next) {
   next();
 });
 
+
+app.get('/', function(req, res) {
+  res.send({name:'Valera'});
+});
+
+
+
+app.post('/users/:foo', function(req, res) {
+  console.log(req.params)
+  const id = req.params.foo;
+
+  res.send(users.filter(user => user.id == id));
+});
+
+app.get('/users/:foo', function(req, res) {
+  console.log(req.params)
+  const id = req.params.foo;
+
+  res.send(users.filter(user => user.id == id));
+});
 
 
 app.listen(port, function () {

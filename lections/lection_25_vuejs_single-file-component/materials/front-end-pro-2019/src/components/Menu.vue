@@ -3,7 +3,10 @@
 
         <br> 
        Inner child : {{sometext}}
-        <input type="text" @input="getValue" v-bind:value="sometext">
+        <input 
+        type="text" 
+        @input="getValue" 
+        v-bind:value="sometext">
     </div>
 </template>
 
@@ -22,8 +25,6 @@
       },
       methods: {
         getValue ({target}) {
-            console.log('input getValue method');
-
            this.$emit('transfer', target.value);
         }
       },
