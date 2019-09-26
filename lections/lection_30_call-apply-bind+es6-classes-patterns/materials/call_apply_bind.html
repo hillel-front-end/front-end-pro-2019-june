@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // call, apply, bind
+    let personOne = {
+        name: 'Vasy',
+        lastName: "Petrov"
+    };
+
+    let personTwo = {
+        name: 'Kosty',
+        lastName: "Lomov"
+    };
+
+    function foo() {
+        console.log(this.name, 'this.name');
+        console.log(this.lastName, 'this.lastName');
+    }
+
+    // foo(); -- > 
+    // obj.foo = foo; 
+    // obj.foo(); --> 
+    //var a = new foo() -->
+
+    //call, arguments,
+
+    //apply
+
+
+    //setTimeout, bind - > 
+    
+    // function bind(context) { 
+    //     let fn = this;
+    //     return function(a) {
+    //         fn.call(context, a);
+    //     }
+    // }
+
+
+    
+    </script>
+</body>
+</html>
