@@ -4,12 +4,12 @@
 //Главная идея в том, чтобы мы могли добавлять неограниченое количество функционала без изменения кода базовой сущности.
 
 
-//Базовая сущьность
 var validator = {
     types: {}, // какие поля будет проверять
     messages: [],
     config: {},
-
+// 
+    //Базовая сущьность
     // проверяет корректность значений в объекте data в соответствии с настройками указанными в свойстве config
     // возвращает true при наличии ошибок, false - если свойства объекта заполнены правильно.
     validate: function (data) {
@@ -19,8 +19,8 @@ var validator = {
 
         for (i in data) {
             if (data.hasOwnProperty(i)) {
-                type = this.config[i]; // получаем тип проверки для свойства
-                checker = this.types[type]; // получаем объект выполняющий проверку
+                type = this.config['firstName']; // получаем тип проверки для свойства
+                checker = this.types['required']; // получаем объект выполняющий проверку
 
                 if (!type) {
                     continue; // проверка не требуется
@@ -33,6 +33,7 @@ var validator = {
                 }
 
                 invalid = checker.validate(data[i]);
+                
                 if (invalid) {
                     msg = "Не правильное значение для " + i + ", " + checker.message;
                     this.messages.push(msg);
@@ -73,6 +74,13 @@ validator.types.email = {
     message: "Значение должно быть email адресом"
 };
 
+validator.types.foo = {
+    validate: function (value) {
+        return true || false
+    },
+    message: "Значение должно быть email адресом"
+};
+
 
 var data1 = {
     firstName: "Ivan",
@@ -93,7 +101,8 @@ validator.config = {
     firstName: "required",
     lastName: "required",
     age: "number",
-    email: "email"
+    email: "email",
+    country: "foo"
 };
 
 

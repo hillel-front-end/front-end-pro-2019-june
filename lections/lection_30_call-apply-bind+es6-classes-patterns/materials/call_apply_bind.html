@@ -9,42 +9,90 @@
 <body>
     <script>
     // call, apply, bind
-    let personOne = {
-        name: 'Vasy',
-        lastName: "Petrov"
-    };
 
-    let personTwo = {
-        name: 'Kosty',
-        lastName: "Lomov"
-    };
+    // var name = "Global Name";
+    // var lastName = "Global Last Name";
 
-    function foo() {
-        console.log(this.name, 'this.name');
-        console.log(this.lastName, 'this.lastName');
-    }
+    // let personOne = {
+    //     name: 'Vasy',
+    //     lastName: "Petrov"
+    // };
 
-    // foo(); -- > 
+    // let personTwo = {
+    //     name: 'Kosty',
+    //     lastName: "Lomov"
+    // };
+ 
+    // function foo(a, b, c, h) {
+    //     // console.log(a,b,c, h);
+    //     // console.log(this.name, 'this.name');
+    //     // console.log(this.lastName, 'this.lastName');
+    //     // this.a = 123
+    //     // console.log(this);4
+
+ 
+
+    // //    let arg = [].slice.apply(arguments, [2]);
+
+    //     // console.log(arg);
+    // }
+
+    // foo(); -- > window
     // obj.foo = foo; 
-    // obj.foo(); --> 
-    //var a = new foo() -->
+    // obj.foo(); --> obj
+    //var a = new foo() --> a
 
-    //call, arguments,
+    //call, arguments, func.call(context, a,b,c)
+        // foo.call(personOne, [1,2,3]);
 
+        // let mass = [1,2,3];
+        // mass.push({});
+        // foo.apply(personOne, mass);
     //apply
 
+//--------------- BIND -----------------
+    //setTimeout, bind - > foo.bind(context) -> func -> foo()
 
-    //setTimeout, bind - > 
+    //     function foo(a, b, c, h) {
+    //         console.log(a,b,c);
+
+    //        console.log(this.name, 'this.name');
+    //         console.log(this.lastName, 'this.lastName');
+
+    //     }
+
+    //   let _foo =  foo.bind(personOne, [1,2,3]);
+
+    //   _foo('hello world', {});
     
-    // function bind(context) { 
+    // function bind(context, arg) { 
     //     let fn = this;
-    //     return function(a) {
-    //         fn.call(context, a);
+    //     return function(arg) {
+    //        return fn.call(context, arg);
     //     }
     // }
 
-
     
+    // let personTwo = {
+    //     name: 'Kosty',
+    //     lastName: "Lomov",
+    //     c1: function() {
+    //         console.log(this, 'c1');
+    //     }
+    //  };
+
+    // // setTimeout(personTwo.c1, 1000);
+
+    // function setTimeout(func, deley) {
+    //     console.log(func, 'func');
+    //     func();
+
+    // }
+
+
+    // setTimeout(personTwo.c1.bind(personTwo))
+
+
     </script>
 </body>
 </html>

@@ -1,16 +1,23 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <main></main>
-    </div>
+    <router-link to="/">HOME</router-link>
+    <br />
+    <router-link to="/about">About</router-link>
+    <br />
+    <router-link to="/admins">Admin</router-link>
 
-
-   <router-link to="/">Name path</router-link>
-   <router-link to="/main">Name path</router-link>
-
-    <router-view/>
+    <router-view></router-view>
   </div>
 </template>
+
+<script>
+
+export default {
+  name:'app',
+  components: {
+  }
+}
+</script>
 
 <style lang="scss">
 #app {

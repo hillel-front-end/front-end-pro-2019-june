@@ -5,7 +5,7 @@ let candidates = (function candidatesModule() {
   ];
   
   function getCandidatesList () {
-    return candidatesList;
+    return candidatesList.slice();
   }
 
   function setCandidateList(candidate) {

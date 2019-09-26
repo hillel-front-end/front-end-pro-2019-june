@@ -1,42 +1,15 @@
 <template>
   <div class="hello">
-<!--    <Flag></Flag>-->
-
-
-<!--    <Foo>-->
-<!--        <template v-slot:header>-->
-<!--          Header-->
-<!--          <br />-->
-<!--        </template>-->
-
-<!--        <template v-slot:body>-->
-<!--          Body-->
-<!--          <br />-->
-<!--        </template>-->
-
-<!--      <template v-slot:footer>-->
-<!--        Footer-->
-<!--        <br />-->
-<!--      </template>-->
-<!--    </Foo>-->
-
-
   </div>
 </template>
 
 <script>
-  import Flag  from "./Flag";
-  import Foo from "./Foo";
+
 
 export default {
   name: 'HelloWorld',
-  components: {Foo, Flag},
   props: {
     msg: String
-  },
-  comments: {
-    Flag,
-    Foo
   }
 }
 </script>

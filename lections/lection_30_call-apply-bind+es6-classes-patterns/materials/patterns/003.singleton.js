@@ -7,7 +7,8 @@ function Candidates(name, age, skills) {
     this.skills = skills;
 
 
-    Candidates = function () {
+    Candidates = function (anotherValue) {
+        instance.anotherValue = anotherValue;
         return instance;
     }
 
@@ -17,3 +18,6 @@ function Candidates(name, age, skills) {
 let candidateFirst = new Candidates('Valera', 12, ['css', 'html', 'js']);
 let candidateSecond = new Candidates();
 
+console.log(candidateFirst, candidateSecond);
+
+console.log(candidateFirst === candidateSecond);

@@ -1,7 +1,7 @@
 <template>
     <div>
         <strong>
-            FOO2
+            Contacts
         </strong>
     </div>
 </template>

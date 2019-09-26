@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
-import Admins from "./views/Admins";
-import foo1 from "./views/AdminsChildren/foo1.vue";
-import foo2 from "./views/AdminsChildren/foo2";
+import Home from './views/Home'
+import About from './views/About'
+import Admins from './views/Admins'
+import foo1 from './views/AdminsChildren/foo1'
+import foo2 from './views/AdminsChildren/foo2'
+
 Vue.use(Router)
 
 export default new Router({
@@ -11,36 +13,30 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/',
-      name: 'home',
-      component: SignIn
+      path:'/',
+      component: Home
     },
     {
-      path: '/main',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: Main
+      path:'/about',
+      component: About
     },
     {
-      path: '/admins',
-      name: 'admins',
+      path:'/admins',
       component: Admins,
       children: [
         {
-          path: 'foo1',
+          path:'gallery',
           component: foo1
         },
         {
-          path: 'foo2',
+          path:'contacts',
           component: foo2
-        }
+        },
       ]
     },
     {
-      path: '*',
-      component: notFound
-    }
+      path:'*',
+      component: Home
+    },
   ]
 })

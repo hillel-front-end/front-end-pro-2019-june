@@ -1,6 +1,6 @@
 <template>
     <strong>
-        FOO - 1
+        Gallery - 1
     </strong>
 </template>
 
